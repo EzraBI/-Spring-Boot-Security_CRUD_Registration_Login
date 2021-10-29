@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div class="container text-left">
+        <p><b>Tracom</b></p>
+    </div>
+    <meta charset="ISO-8859-1">
+    <title>Office Meetings Planner</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<nav id="navbar-home" class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" >
+    <a class="navbar-brand" style="margin-left: 2%" href="">Office Meeting Planner</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/organizational_officer}">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="">About us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Contact us</a>
+            </li>
+
+
+
+        </ul>
+
+    </div>
+</nav>
+</head>
+<body style="background: black;">
+
+<div class="top">
+    <div class="d-flex" id="wrapper" style="background-color: cadetblue">
+
+
+        <div class="container text-center" style="  margin: 3% 1% 1%;">
+
+            <h3>List of All Organizations</h3>
+
+            <div>
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Organization ID</th>
+                        <th>Organization Name</th>
+
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="organization: ${listOrg}">
+                        <td th:text="${organization.organization_id}">Organization ID</td>
+                        <td th:text="${organization.organization_name}">Organization Name</td>
+
+                        <td>
+                            <a th:href="@{'/edit_org/' + ${organization.organization_id}}"
+                               onclick="return confirm('Are you sure you want to edit the Organization details?')">
+                                <button style='font-size:16px;color:blue'>Edit
+                                    <i class='fas fa-edit'></i>
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/delete_org/' + ${organization.organization_id}}"
+                               onclick="return confirm('Are you sure you want to delete the Organization?')">
+                                <button style='font-size:16px;color:red'>Delete
+                                    <i class='far fa-trash-alt'></i>
+                                </button>
+                            </a>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+
+    </div>
+</div>
+</body>
+<footer class="container text-center" style=" background-color: black; color: white">
+    <p>Tracom Service, copyright &copy  All Rights Reserved 2021</p>
+</footer>
+</html>

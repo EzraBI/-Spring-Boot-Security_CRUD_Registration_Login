@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<div class="container text-left">
+		<p><b>Tracom</b></p>
+	</div>
+	<meta charset="ISO-8859-1">
+	<title>Office Meetings Planner</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<nav id="navbar-home" class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" >
+	<a class="navbar-brand" style="margin-left: 2%" href="">Office Meeting Planner</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/organizational_officer}">Home <span class="sr-only"></span></a>
+			</li>
+			<li class="nav-item ">
+				<a class="nav-link" href="">About us</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="">Contact us</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{listUsers}">List of Users</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/register}">Add User</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/roles}">Roles</a>
+			</li>
+
+		</ul>
+
+	</div>
+</nav>
+</head>
+<body style="background: black;">
+
+<div class="top">
+	<div class="d-flex" id="wrapper" style="background-color: cadetblue" >
+
+
+		<div class="container text-center" style="  margin: 1% 10% 1%;">
+
+
+			<h1>Office Meetings Planner: Users</h1>
+
+			<div class="container" >
+				<img th:src="@{/images/im1.jpg}" alt="" width="900" height="450" longdesc=th:src="@{./images/im1.jpg}"/>
+
+			</div>
+
+
+
+			<br>
+			<!--			<br><br><br><br><br><br><br><br><br><br><br><br>-->
+
+		</div>
+
+	</div>
+
+</div>
+
+<footer class="container text-center" style=" background-color: black; color: white">
+	<p>Tracom Service, copyright &copy  All Rights Reserved 2021</p>
+</footer>
+
+
+</body>
+</html>

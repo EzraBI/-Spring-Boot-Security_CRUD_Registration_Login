@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head style="margin-bottom: 0%">
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<!--  Bootstrap icons-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<!--  Custom CSS-->
+	<link href="../static/css/admin.css" rel="stylesheet"/>
+	<link th:href="@{/css/admin.css}" rel="stylesheet"/>
+</head>
+<header>
+	<div class="container" style="margin-bottom: 0%">
+		<div id="branding">
+			<h1> <span class="highlight">OFFICE</span><span class="highlight"> MEETING</span><span class="highlight"> PLANNER</span></h1>
+		</div>
+		<nav>
+
+			<li class="current"><b><a href=""> Home </a></b></li>
+			<li><b><a href="#">About Us</a></b></li>
+			<li><b><a href="#">Contact Us </a></b></li>
+
+		</nav>
+	</div>
+</header>
+
+<body>
+<!--middle content-->
+<div style="  margin: 0% 0% 0% 28%;" >
+	<img th:src="@{./images/im1.jpg}" alt="" width="750" height="480">
+</div>
+<!--middle content-->
+<div class="offcanvas offcanvas-start sidebar-nav bg-dark text-white" th:fragment="sidebar"
+	 tabindex="-1"
+	 id="offcanvasExample"
+	 aria-labelledby="offcanvasExampleLabel"
+	 data-bs-backdrop="true">
+
+	<div class="offcanvas-body p-0" style="background-color: #20c997">
+		<nav class="navbar" style="color: #b6effb">
+			<ul class="navbar-nav">
+				<li style="color: black">
+					<div class="text-uppercase fw-bold px-4" >
+						<b>USER DASHBOARD</b>
+					</div>
+				</li>
+				<li>
+					<div>
+						<form th:action="@{/logout}" method="post">
+
+							<input type="submit" value="Sign Out" />
+						</form>
+					</div>
+				</li>
+				<br>
+				<!--				User Management-->
+<!--								<li>-->
+<!--									<div class=" text-uppercase fw-bold px-3" style="color: #1a1e21">-->
+<!--										User Management-->
+<!--									</div>-->
+<!--								</li>-->
+
+
+
+<!--								<li>-->
+<!--									<a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">-->
+<!--										<span class="me-2"><i class="bi bi-people-fill"></i></span>Users-->
+<!--										<span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>-->
+<!--									</a>-->
+
+<!--									<div class="collapse" id="collapseExample">-->
+<!--										<div>-->
+<!--											<ul class="navbar-nav ps-3">-->
+<!--												<li>-->
+<!--													<a th:href="@{/users}" class="nav-link px-3">-->
+<!--														<span><span><i class="bi bi-people"></i></span> Users List</span>-->
+<!--													</a>-->
+<!--												</li>-->
+
+<!--												<li>-->
+<!--													<a th:href="@{/register}" class="nav-link px-3">-->
+<!--														<span><span><i class="bi bi-person-plus"></i></span> Add User</span>-->
+<!--													</a>-->
+<!--												</li>-->
+
+<!--											</ul>-->
+<!--										</div>-->
+<!--									</div>-->
+
+<!--								</li>-->
+
+<!--								<li class="my-4">-->
+<!--									&lt;!&ndash;          <hr class="dropdown-divider"/>&ndash;&gt;-->
+<!--								</li>-->
+				<!--				User Management-->
+				<!--boardrooms-->
+				<li>
+					<div class=" text-uppercase fw-bold px-3" style="color: #1a1e21">
+						Boardrooms Management
+					</div>
+				</li>
+
+				<li>
+					<a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+						<span class="me-2"><i class="bi bi-bank2"></i></span>Boardrooms
+						<span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>
+					</a>
+
+					<div class="collapse" id="collapseExample">
+						<div>
+							<ul class="navbar-nav ps-3">
+								<li>
+									<a th:href="@{/list_room}" class="nav-link px-3">
+										<span><span><i class="bi bi"></i></span>Boardrooms List</span>
+									</a>
+								</li>
+
+								<!--								<li>-->
+								<!--									<a th:href="@{/add_room}" class="nav-link px-3">-->
+								<!--										<span><span><i class="bi bi-bank2-plus"></i></span> Add Boardroom</span>-->
+								<!--									</a>-->
+								<!--								</li>-->
+
+							</ul>
+						</div>
+					</div>
+
+				</li>
+
+				<li class="my-4">
+					<!--          <hr class="dropdown-divider"/>-->
+				</li>
+
+				<!--boardrooms-->
+				<!--organization-->
+				<li>
+					<div class=" text-uppercase fw-bold px-3" style="color: #1a1e21">
+						Organizations Management
+					</div>
+				</li>
+
+				<li>
+					<a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+						<span class="me-2"><i class="bi bi-building"></i></span>Organizations
+						<span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>
+					</a>
+
+					<div class="collapse" id="collapseExample">
+						<div>
+							<ul class="navbar-nav ps-3">
+								<li>
+									<a th:href="@{/list_organization}" class="nav-link px-3">
+										<span><span><i class="bi bi-"></i></span>Organizations List</span>
+									</a>
+								</li>
+
+								<!--								<li>-->
+								<!--									<a th:href="@{/add_org}" class="nav-link px-3">-->
+								<!--										<span><span><i class="bi bi-building-plus"></i></span> Add Organization</span>-->
+								<!--									</a>-->
+								<!--								</li>-->
+
+							</ul>
+						</div>
+					</div>
+
+				</li>
+
+				<li class="my-4">
+					<!--          <hr class="dropdown-divider"/>-->
+				</li>
+				<!--organization-->
+				<!--				Meetings Management-->
+				<li>
+					<div class=" text-uppercase fw-bold px-3" style="color: #1a1e21">
+						Meetings Management
+					</div>
+				</li>
+
+				<li>
+					<a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#meetingsdropdown" role="button" aria-expanded="false" aria-controls="collapseExample">
+						<span class="me-2"><i class="bi bi-calendar-event-fill"></i></span>Meetings
+						<span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>
+					</a>
+
+					<div class="collapse" id="meetingsdropdown">
+						<div>
+							<ul class="navbar-nav ps-3">
+								<li>
+									<a th:href="@{/ListMeetings}" class="nav-link px-3">
+										<span><i class="bi bi-calendar3"></i></span> View Meetings</span>
+									</a>
+								</li>
+
+								<li>
+									<a th:href="@{/add_meeting}"class="nav-link px-3">
+										<span><span><i class="bi bi-calendar-plus"></i></span> Schedule Meeting</span>
+									</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+				</li>
+
+				<li class="my-4">
+					<!--          <hr class="dropdown-divider"/>-->
+				</li>
+				<!--				Meetings Management-->
+
+
+			</ul>
+		</nav>
+	</div>
+</div>
+<!--Offcanvas-->
+
+<!-- Footer -->
+<footer class="page-footer font-small elegant-color fixed-bottom" th:fragment="footer">
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3"> Tracom © 2021 Copyright</div>
+	<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</body>
+</html>
