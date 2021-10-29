@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Welcome To Office Meeting Planner">
+	<!-- <meta name="keywords" content="high discipline,good perfomance"> -->
+	<meta name="author" content="Elliot">
+	<title>Office Meeting Planner |About us</title>
+	<title style="color:blue;"></title>
+	<link rel="stylesheet" href="./css/style.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<!--  Bootstrap icons-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+<header>
+	<div class="container">
+		<div id="branding">
+			<h1> <span class="highlight">OFFICE</span><span class="highlight"> MEETING</span><span class="highlight"> PLANNER</span></h1>
+		</div>
+		<nav>
+			<li></li>
+			<li class="current"><b><a href=""> Home </a></b></li>
+			<li><b><a href="#">About Us</a></b></li>
+			<li><b><a href="#">Contact Us </a></b></li>
+			<li><a th:href="@{/users}">Users</a></li>
+			<li><a th:href="@{/organizations}">Organizations</a></li>
+			<li><a th:href="@{/boardrooms}">Boardrooms</a></li>
+			<li><a th:href="@{/meetings}">Meetings</a></li>
+
+
+		</nav>
+
+	</div>
+</header>
+<div>
+	<section id="showcase" style="  margin: 0% 0% 0%">
+		<div class="container">
+
+			<div class="container" style="alignment: right; color: blue" align="right">
+				<p> User: <b> [[${#request.userPrincipal.principal.fullName}]] </b></p>
+
+				<form th:action="@{/logout}" method="post" >
+					<input type="submit" value="Log Out" />
+				</form>
+				<br>
+
+			</div>
+
+		</div>
+		<div style="  margin: 0% 0% 0%">
+			<img th:src="@{./images/im1.jpg}" alt="" width="900" height="350" longdesc=th:src="@{./images/im1.jpg}"/>
+		</div>
+
+	</section>
+</div>
+<div>
+	<footer bgcolor="black">
+		<p>Tracom Service, copyright &copy  All Rights Reserved 2021</p>
+	</footer>
+</div>
+</body>
+</html>

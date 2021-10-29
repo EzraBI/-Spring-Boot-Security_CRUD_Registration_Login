@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Welcome To Office Meeting Planner">
+	<!-- <meta name="keywords" content="high discipline,good perfomance"> -->
+	<meta name="author" content="Elliot">
+	<title>Office Meeting Planner |About us</title>
+	<title style="color:blue;"></title>
+	<link rel="stylesheet" href="./css/style.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<!--  Bootstrap icons-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+<header>
+	<div class="container">
+		<div id="branding">
+			<h1> <span class="highlight">OFFICE</span><span class="highlight"> MEETING</span><span class="highlight"> PLANNER</span></h1>
+		</div>
+		<nav>
+			<li></li>
+			<li><b><a href=""> Home </a></b></li>
+			<li><b><a href="#">About Us</a></b></li>
+			<li><b><a href="#">Contact Us </a></b></li>
+
+
+
+		</nav>
+
+	</div>
+</header>
+<div>
+	<section id="showcase" style="background-color: #9A9A9A; margin: 0% 0% 0%">
+		<div class="container">
+			<div class="container text-center" >
+				<div>
+					<h1>User Registration - Sign Up</h1>
+				</div>
+				<form th:action="@{/process_register}" th:object="${user}"
+					  method="post" style="max-width: 600px; margin: 0 auto;">
+					<div class="m-3">
+						<div class="form-group row">
+							<label class="col-4 col-form-label">E-mail: </label>
+							<div class="col-8">
+								<input type="email" th:field="*{email}" class="form-control" required />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-4 col-form-label">Password: </label>
+							<div class="col-8">
+								<input type="password" th:field="*{password}" class="form-control"
+									   required minlength="6" maxlength="10"/>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-4 col-form-label">First Name: </label>
+							<div class="col-8">
+								<input type="text" th:field="*{firstName}" class="form-control"
+									   required minlength="2" maxlength="20"/>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-4 col-form-label">Last Name: </label>
+							<div class="col-8">
+								<input type="text" th:field="*{lastName}" class="form-control"
+									   required minlength="2" maxlength="20" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-4 col-form-label">Phone Number: </label>
+							<div class="col-8">
+								<input type="text" th:field="*{phone_no}" class="form-control"
+									   required minlength="2" maxlength="20" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-4 col-form-label">Gender: </label>
+							<div class="col-8">
+								<input type="radio" th:field="*{gender}" value="Male" />Male
+								<input type="radio" th:field="*{gender}" value="Female" />Female<br/>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-4 col-form-label">Department: </label>
+							<div class="col-8">
+								<select th:field="*{department}">
+									<option th:each="p : ${listDepartment}" th:value="${p}" th:text="${p}"/>
+								</select>
+							</div>
+						</div>
+
+						<div>
+							<button type="submit" class="btn btn-primary">Sign Up</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+</section>
+</div>
+
+<div>
+	<footer bgcolor="black">
+		<p>Tracom Service, copyright &copy  All Rights Reserved 2021</p>
+	</footer>
+</div>
+</body>
+</html>
